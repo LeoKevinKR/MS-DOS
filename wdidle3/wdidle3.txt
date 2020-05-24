@@ -1,0 +1,54 @@
+//=============================================================================
+//
+// Copyright 2005-2009 Western Digital Corporation
+//
+// RESTRICTED RIGHTS LEGEND
+// ------------------------
+//
+// Use, duplication or disclosure by any commercial industry (public
+// or private), private individual or by any Government Agency without
+// an expressed written consent of release from Western Digital
+// Corporation is subject to restriction set forth in paragraph
+// (b)(3)(B) of the Rights in Technical Data and Computer Software
+// clause in DAR 7-104.9(a). 
+//
+// Manufacturer is:
+//
+// Western Digital Corporation
+//   20511 Lake Forest Dr.
+//   Lake Forest, CA 92630
+//   1-800-275-4932
+//=============================================================================
+
+WDIDLE3 Version 1.05 for DOS
+
+
+DESCRIPTION
+- DOS Level utility to setup or report the idle3 value.
+
+
+FEATURES
+- Scan for all drives. Non-WD Drives shall only show the model and serial 
+  numbers.
+- Uses a Vendor Specific Command to set or get the idle3 timer.
+- Timer can be set from 8 to 25.5 seconds on older drives.
+- Timer can be set from 8 to 300 seconds on newer drives.
+
+
+USAGE
+WDIDLE3 [/S[<Timer>]] [/D] [/R] [/?]
+where:
+/S[<Timer>] Set timer, units in seconds. Default=8.0 (8.0 seconds).
+            Resolution is 0.1 seconds from 8.0 to 12.7 seconds.
+            Resolution is 30 seconds from 30 seconds to 300 seconds.
+            Note, times between 12.8 and 30 seconds will be set to 30 seconds.
+/D          Disable timer.
+/R          Report current timer.
+/?          This help info.
+
+DOS ERRORLEVEL
+0     No error
+1     Drive problem
+254   Internal program error
+255   Invalid command line argument
+
